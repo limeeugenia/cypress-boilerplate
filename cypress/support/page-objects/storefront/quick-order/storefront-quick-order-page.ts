@@ -57,14 +57,14 @@ export class StorefrontQuickOrderPage extends AbstractPage {
   incrementQuantity = (rowIndex: number): Cypress.Chainable => {
     return this.getQuickOrderRows()
       .eq(rowIndex)
-      .find('.quick-order-row-partial__button--increment')
+      .find('.js-quick-order-row-partial__button-increment')
       .click()
   }
 
   decrementQuantity = (rowIndex: number): Cypress.Chainable => {
     return this.getQuickOrderRows()
       .eq(rowIndex)
-      .find('.quick-order-row-partial__button--decrement')
+      .find('.js-quick-order-row-partial__button-decrement')
       .click()
   }
 

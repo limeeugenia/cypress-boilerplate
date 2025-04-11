@@ -11,8 +11,6 @@ import { StorefrontCheckoutShippingPage } from '@support/page-objects/storefront
 import { StorefrontCheckoutPaymentPage } from '@support/page-objects/storefront/checkout/storefront-checkout-payment-page'
 import { StorefrontCheckoutSummaryPage } from '@support/page-objects/storefront/checkout/storefront-checkout-summary-page'
 import { StorefrontCheckoutSuccessPage } from '@support/page-objects/storefront/checkout/storefront-checkout-success-page'
-import { GlueAddressesScenarios } from '@support/scenarios/glue/glue-addresses-scenarios'
-import { GlueCartsScenarios } from '@support/scenarios/glue/glue-carts-scenarios'
 import { StorefrontCartScenarios } from '@support/scenarios/storefront/storefront-cart-scenarios'
 
 const storefrontLoginPage = new StorefrontLoginPage()
@@ -25,22 +23,9 @@ const checkoutShipping = new StorefrontCheckoutShippingPage()
 const checkoutPayment = new StorefrontCheckoutPaymentPage()
 const checkoutSummary = new StorefrontCheckoutSummaryPage()
 const checkoutSuccess = new StorefrontCheckoutSuccessPage()
-const glueAddressesScenarios = new GlueAddressesScenarios()
-const glueCartsScenarios = new GlueCartsScenarios()
 const storefrontCartScenarios = new StorefrontCartScenarios()
 
 before(() => {
-  // reset customer addresses
-  glueAddressesScenarios.deleteAllCustomerAddresses(
-    customerCredentials.email,
-    customerCredentials.password,
-    customerCredentials.reference
-  )
-  // reset customer carts
-  glueCartsScenarios.deleteAllShoppingCarts(
-    customerCredentials.email,
-    customerCredentials.password
-  )
 })
 
 context('Customer checkout', () => {

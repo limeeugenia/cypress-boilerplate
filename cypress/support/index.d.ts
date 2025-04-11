@@ -13,20 +13,6 @@ declare namespace Cypress {
     createNewCart(): Cypress.Chainable<any>
 
     /**
-     * @example cy.placeOrderViaGlue('sonia@spryker.com','change123','464012',1, 'Dummy Payment', 'Invoice', 'offer123', 'MER0001')
-     */
-    placeOrderViaGlue(
-      email: string,
-      password: string,
-      sku: string,
-      shipment: number,
-      paymentProvider: string,
-      paymentMethod: string,
-      offer: string,
-      merchant: string
-    ): Cypress.Chainable<string>
-
-    /**
      * * @example cy.triggerOmsTransition('/path/to/spryker/env')
      */
     triggerOmsTransition(path?: string): Cypress.Chainable<any>

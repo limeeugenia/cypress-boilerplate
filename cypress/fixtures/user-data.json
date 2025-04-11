@@ -2,9 +2,5 @@
   "backofficeUser": {
     "email": "admin@spryker.com",
     "password": "change123"
-  },
-  "merchantPortalUser": {
-    "email": "martha@office-king.nl",
-    "password": "change123"
   }
 }

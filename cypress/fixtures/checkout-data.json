@@ -1,18 +1,10 @@
 {
   "storefrontShipment": {
-    "name": "Express",
-    "price": "5.90"
-  },
-  "glueShipment": {
-    "id": 1
+    "name": "UPS Standard (DE)",
+    "price": "2.61"
   },
 
   "storefrontPayment": {
-    "name": "Marketplace Invoice"
-  },
-  "gluePayment": {
-    "providerName": "dummyMarketplacePayment",
-    "methodName": "Invoice",
-    "SelectionName": "dummyMarketplacePaymentInvoice"
+    "name": "invoice"
   }
 }

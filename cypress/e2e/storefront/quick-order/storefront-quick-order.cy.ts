@@ -13,17 +13,14 @@ const storefrontQuickOrderScenarios = new StorefrontQuickOrderScenarios()
 
 context('Quick order', () => {
   beforeEach(() => {
-    cy.deleteAllShoppingCarts(
-      customerCredentials.email,
-      customerCredentials.password
-    )
-
     storefrontLoginPage.login(
       customerCredentials.email,
       customerCredentials.password
-    )
+    );
 
-    storefrontQuickOrderPage.visit()
+    storefrontCartPage.deleteCartItems();
+
+    storefrontQuickOrderPage.visit();
   })
 
   it('can search product by SKU and to cart', () => {
@@ -48,20 +45,6 @@ context('Quick order', () => {
     storefrontCartPage
       .getCartItemsList()
       .should('contain', quickOrderData.product.searchName)
-  })
-
-  it('can add filtered by merchant product to cart', () => {
-    storefrontQuickOrderPage.selectMerchant(quickOrderData.merchantName)
-
-    storefrontQuickOrderScenarios.addProduct(
-      quickOrderData.product.sku,
-      quickOrderData.product.quantity
-    )
-    storefrontQuickOrderPage.addToCart()
-
-    storefrontCartPage
-      .getCartItemsList()
-      .should('contain', quickOrderData.product.sku)
   })
 
   it('can add product for checkout', () => {
